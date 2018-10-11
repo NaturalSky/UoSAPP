@@ -1,3 +1,3 @@
 # UoSAPP
 A portfolio app to showcase my programming work as well refresh my own skills.
-![Alt text](/relative/path/to/img.jpg?raw=true "Optional Title")
+![Alt text](/../screenshots/path/to/Screenshot_20181012-001611.png?raw=true "Optional Title")
