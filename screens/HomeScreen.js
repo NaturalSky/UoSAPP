@@ -1,3 +1,6 @@
+
+//This screen lets us navigate to all other screens in the App.
+
 import React, { Component } from 'react';
 import {
     View,
@@ -88,7 +91,6 @@ export default HomeScreen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-      //marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
     padding: 10,
     backgroundColor: '#fff',
   },

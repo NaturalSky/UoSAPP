@@ -1,3 +1,6 @@
+
+//This screen shows the result of two units battling and how much damage they will take in the fight.
+
 import React, { Component } from 'react';
 import {
     View,

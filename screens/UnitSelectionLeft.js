@@ -1,3 +1,6 @@
+
+//This screen lets us pick a unit to fight.
+
 import React, { Component } from 'react';
 import {
     View,

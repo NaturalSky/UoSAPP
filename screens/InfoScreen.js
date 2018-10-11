@@ -1,3 +1,6 @@
+
+//This screen displays some information about the App.
+
 import React, { Component } from 'react';
 import {
     View,

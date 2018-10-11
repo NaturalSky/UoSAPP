@@ -1,3 +1,6 @@
+
+//This screen loads in all the relevant Google Sheets data and distributes it, it also generates the navigator.
+
 import React from 'react';
 import { StyleSheet, View, Text, Platform, StatusBar} from 'react-native';
 import { createStackNavigator } from 'react-navigation'

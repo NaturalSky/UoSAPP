@@ -1,7 +1,6 @@
 
-//~This screen displays all the Google Sheets data in a clean list with a expanding function to show more data~
+//This screen displays all the Google Sheets data in a clean list with a expanding function to show more data.
 
-//Imports all relevant components for this screen.
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, StatusBar, FlatList } from "react-native";
 import { List, ListItem } from "react-native-elements";
