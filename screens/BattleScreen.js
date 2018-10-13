@@ -10,6 +10,7 @@ import {
     StatusBar,
     AsyncStorage,
 } from "react-native";
+import styles from '../styles/Styles'
 import _ from 'lodash';
 
 class BattleScreen extends Component {
@@ -131,9 +132,9 @@ class BattleScreen extends Component {
         const { attackersHealth, defendersHealth, attackersDamageTaken, defendersDamageTaken } = this.state;
 
         return (
-          <View style={{flex: 1, flexDirection: 'row', padding: 10}}>
+          <View style={styles.battleContainer}>
             <View style={{flex: 1}}>
-                <Text style={{fontSize: 17, fontWeight: 'bold'}}>Attackers:</Text>
+                <Text style={styles.headerText}>Attackers:</Text>
                 <Text>Unit 1:</Text>
                 <Text>{attackersHealth[0]}</Text>
                 <Text>Unit 2:</Text>
@@ -148,7 +149,7 @@ class BattleScreen extends Component {
                 <Text>{attackersDamageTaken}</Text>
             </View>
             <View style={{flex: 1}}>
-                <Text style={{fontSize: 17, fontWeight: 'bold'}}>Defenders:</Text>
+                <Text style={styles.headerText}>Defenders:</Text>
                 <Text>Unit 1:</Text>
                 <Text>{defendersHealth[0]}</Text>
                 <Text>Unit 2:</Text>
@@ -168,11 +169,3 @@ class BattleScreen extends Component {
 }
 
 export default BattleScreen
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-        backgroundColor: '#fff',
-    },
-});

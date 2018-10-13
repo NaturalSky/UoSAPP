@@ -11,7 +11,7 @@ import {
     Picker,
     TouchableOpacity,
     AsyncStorage,
-    } from "react-native";
+} from "react-native";
 import styles from '../styles/Styles'
 import ModalDropdown from 'react-native-modal-dropdown';
 import _ from 'lodash';
@@ -195,7 +195,6 @@ class UnitSelectionLeft extends Component {
                 {"\n"}{"\n"}
                 Note: Dropdown defaultValue does not reset yet when you change the UnitClass, it is however populated correctly so simply open the dropdown to pick from the new item list.
                 </Text>
-
           </View>
         );
     }

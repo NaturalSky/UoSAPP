@@ -16,6 +16,16 @@ export default StyleSheet.create({
         padding: 10,
         backgroundColor: '#fff',
     },
+    battleContainer: {
+        flex: 1, 
+        flexDirection: 'row', 
+        padding: 10,
+    },
+    infoContainer: {
+        flex: 1, 
+        flexDirection: 'column', 
+        padding: 10,
+    },
     headerText: {
         fontSize: 17, 
         fontWeight: 'bold',

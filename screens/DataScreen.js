@@ -4,6 +4,7 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Platform, StatusBar, FlatList } from "react-native";
 import { List, ListItem } from "react-native-elements";
+import styles from '../styles/Styles'
 import { Collapse,CollapseHeader, CollapseBody } from 'accordion-collapse-react-native';
 
 class DataScreen extends Component {
@@ -32,7 +33,7 @@ class DataScreen extends Component {
                                 <Collapse>
                                     <CollapseHeader>
                                       <View>
-                                        <Text style = {styles.header}>{item.Name}</Text>
+                                        <Text style = {styles.headerText}>{item.Name}</Text>
                                         <Text>{item.Component + " ~ " + item.Class}</Text>
                                       </View>
                                     </CollapseHeader>
@@ -59,15 +60,3 @@ class DataScreen extends Component {
 }
 
 export default DataScreen 
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-        backgroundColor: '#fff',
-    },
-    header: {
-        fontSize: 18,
-        fontWeight: 'bold',
-    }
-});

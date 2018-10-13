@@ -195,7 +195,6 @@ class UnitSelectionRight extends Component {
                 {"\n"}{"\n"}
                 Note: Dropdown defaultValue does not reset yet when you change the UnitClass, it is however populated correctly so simply open the dropdown to pick from the new item list.
                 </Text>
-
           </View>
         );
     }
