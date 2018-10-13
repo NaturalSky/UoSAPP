@@ -106,19 +106,19 @@ class UnitSelectionLeft extends Component {
             this.state.engineStats = { Component: obj.Component, Class: obj.Class, Name: obj.Name, Atk: obj.Atk, Acc: obj.Acc, Def: obj.Def, Eva: obj.Eva, Spd: obj.Spd, Cost: obj.Cost};
         }
         
-        var objx = {};
-        var objB = this.state.unitStats;
-        var obj1 = this.state.weaponStats;
-        var obj2 = this.state.armorStats;
-        var obj3 = this.state.engineStats;
+        var placeholderObj = {};
+        var unitObj = this.state.unitStats;
+        var weaponObj = this.state.weaponStats;
+        var armorObj = this.state.armorStats;
+        var engineObj = this.state.engineStats;
         
-        Object.keys(objB).map(function(a){
-            objx[a] = Number(obj1[a]) + Number(obj2[a]) +  Number(obj3[a]); 
+        Object.keys(unitObj).map(function(a){
+            placeholderObj[a] = Number(weaponObj[a]) + Number(armorObj[a]) +  Number(engineObj[a]); 
         })
-        objx.ArmorType = obj1.WeaponType;
-        objx.WeaponType = obj2.ArmorType
-        this.state.unitStats = objx;
-        AsyncStorage.setItem("totalStatsAttacker", JSON.stringify(objx));
+        placeholderObj.ArmorType = weaponObj.WeaponType;
+        placeholderObj.WeaponType = armorObj.ArmorType
+        this.state.unitStats = placeholderObj;
+        AsyncStorage.setItem("totalStatsAttacker", JSON.stringify(placeholderObj));
     }
 
     render(){

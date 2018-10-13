@@ -70,10 +70,10 @@ class BattleScreen extends Component {
             var attackType = attackMinDef * this.typeCalculation('attacker');
             var attackHealth = attackType;
             var evasion = 1 + unitDefender.Eva;
-            var accuracy = (unitAttacker.Acc - (evasion*2));
+            var accuracy = Math.max(0, (unitAttacker.Acc - evasion));
 
             for (i = 0; i < defendersHealth.length; i++) {
-                defendersHealth[i] = Math.round(20 + -attackHealth/(100/accuracy)*ratio[i]);
+                defendersHealth[i] = Math.round(20 + -Math.max(0, attackHealth/(100/accuracy)*ratio[i]));
                 if(defendersHealth[i] < 0){defendersHealth[i] = 0}
                 defendersRemainder[i] =  attackHealth-20+defendersHealth[i];
                 attackHealth = defendersRemainder[i];
@@ -95,10 +95,11 @@ class BattleScreen extends Component {
             var attackType = attackMinDef * this.typeCalculation('defender');
             var attackHealth = attackType * ((100 + -defendersDamageTaken)/100);
             var evasion = 1 + unitAttacker.Eva;
-            var accuracy = (unitDefender.Acc - (evasion*2));
+            var accuracy = Math.max(0, (unitDefender.Acc - evasion));
+
 
             for (i = 0; i < attackersHealth.length; i++) {
-                attackersHealth[i] = Math.round(20 + -attackHealth/(100/accuracy)*ratio[i]);
+                attackersHealth[i] = Math.round(20 + -Math.max(0, attackHealth/(100/accuracy)*ratio[i]));
                 if(attackersHealth[i] < 0){attackersHealth[i] = 0}
                 attackersRemainder[i] =  attackHealth-20+attackersHealth[i];
                 attackHealth = attackersRemainder[i];
