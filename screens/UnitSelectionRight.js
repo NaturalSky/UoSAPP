@@ -12,7 +12,7 @@ import {
     TouchableOpacity,
     AsyncStorage,
 } from "react-native";
-import { Dropdown } from 'react-native-material-dropdown';
+import styles from '../styles/Styles'
 import ModalDropdown from 'react-native-modal-dropdown';
 import _ from 'lodash';
 
@@ -130,7 +130,7 @@ class UnitSelectionRight extends Component {
           <View style={{padding: 10}}>
                 <ModalDropdown 
                     style={{height: 70}}
-                    textStyle={{fontSize: 17, fontWeight: 'bold'}}
+                    textStyle={styles.headerText}
                     defaultValue={this.state.classValue}
                     options={[componentObject[0].one, componentObject[0].two, componentObject[0].three, componentObject[0].four]}
                     onSelect={(index, value) => { 
@@ -144,7 +144,7 @@ class UnitSelectionRight extends Component {
                 /> 
                 <ModalDropdown
                     style={{height: 70}}
-                    textStyle={{fontSize: 17, fontWeight: 'bold'}}
+                    textStyle={styles.headerText}
                     defaultValue = {this.state.weaponDropdown[0]}
                     options={this.state.weaponDropdown}
                     onSelect={(index, value) => {
@@ -158,7 +158,7 @@ class UnitSelectionRight extends Component {
                 />
                 <ModalDropdown 
                     style={{height: 70}}
-                    textStyle={{fontSize: 17, fontWeight: 'bold'}}
+                    textStyle={styles.headerText}
                     defaultValue={this.state.armorDropdown[0]}
                     options={this.state.armorDropdown}
                     onSelect={(index, value) => {
@@ -172,7 +172,7 @@ class UnitSelectionRight extends Component {
                 />
                 <ModalDropdown 
                     style={{height: 70}}
-                    textStyle={{fontSize: 17, fontWeight: 'bold'}}
+                    textStyle={styles.headerText}
                     defaultValue={this.state.engineDropdown[0]}
                     options={this.state.engineDropdown}
                     onSelect={(index, value) => {
@@ -193,7 +193,7 @@ class UnitSelectionRight extends Component {
                     Speed:       {item.Spd + "\n"}
                     Cost:         {item.Cost}
                 {"\n"}{"\n"}
-                "Note: Dropdown defaultValue does not reset yet when you change the UnitClass, it is however populated correctly so simply open the dropdown to pick from the new item list."
+                Note: Dropdown defaultValue does not reset yet when you change the UnitClass, it is however populated correctly so simply open the dropdown to pick from the new item list.
                 </Text>
 
           </View>
@@ -203,11 +203,3 @@ class UnitSelectionRight extends Component {
 
 
 export default UnitSelectionRight
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-        backgroundColor: '#fff',
-    },
-});

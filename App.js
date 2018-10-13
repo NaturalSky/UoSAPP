@@ -5,6 +5,7 @@ import React from 'react';
 import { StyleSheet, View, Text, Platform, StatusBar} from 'react-native';
 import { createStackNavigator } from 'react-navigation'
 
+import styles from './styles/Styles'
 import HomeScreen from './screens/HomeScreen';
 import BattleScreen from './screens/BattleScreen';
 import DataScreen from './screens/DataScreen';
@@ -119,14 +120,14 @@ export default class App extends React.Component {
 
         if (!this.state.isLoading) {
             return (
-                <View style = {styles.container}>
+                <View style = {styles.androidBar}>
                     <AppStackNavigator screenProps={passedData}/>
                 </View>
             );
         }else
         {
             return (
-                <View style = {{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+                <View style = {styles.loadingScreen}>
                     <Text style={{fontSize: 20, fontWeight: 'bold'}}>Loading...</Text>
                 </View>
             );
@@ -143,11 +144,3 @@ const AppStackNavigator = createStackNavigator({
     Data: { screen: DataScreen },
     Info: { screen: InfoScreen },
 })
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
-    backgroundColor: 'black',
-  },
-});
